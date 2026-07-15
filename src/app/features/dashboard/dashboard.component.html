@@ -71,11 +71,16 @@
       } @else {
         <ul class="divide-y divide-gray-100">
           @for (execucao of execucoesRecentes(); track execucao.id) {
-            <li class="flex items-center justify-between gap-4 py-3">
-              <a [routerLink]="['/execucoes', execucao.id]" class="flex flex-1 items-center gap-3">
+            <li class="flex flex-wrap items-center justify-between gap-2 py-3">
+              <a
+                [routerLink]="['/execucoes', execucao.id]"
+                class="flex min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-1"
+              >
                 <app-cliente-badge [cliente]="execucao.cliente" />
-                <span class="text-sm text-gray-700">{{ execucao.tipoTeste }}</span>
-                <span class="text-xs text-gray-400">{{ execucao.dataFim | dataRelativa }}</span>
+                <span class="min-w-0 truncate text-sm text-gray-700">{{ execucao.tipoTeste }}</span>
+                <span class="whitespace-nowrap text-xs text-gray-400">
+                  {{ execucao.dataFim | dataRelativa }}
+                </span>
               </a>
               <app-status-badge [status]="execucao.status" />
             </li>
