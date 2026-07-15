@@ -1,10 +1,7 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { catchError, map, of } from 'rxjs';
 
-import { Execucao } from '../../core/models/execucao.model';
-import { ExecucaoService } from '../../core/services/execucao.service';
+import { injetarEstadoExecucoes } from '../../core/services/execucoes-estado';
 import { ClienteBadgeComponent } from '../../shared/components/cliente-badge.component';
 import { StatusBadgeComponent } from '../../shared/components/status-badge.component';
 import { DataRelativaPipe } from '../../shared/pipes/data-relativa.pipe';
@@ -18,15 +15,9 @@ import {
   obterExecucoesMaisRecentes,
 } from './dashboard.metrics';
 
-type EstadoExecucoes =
-  | { status: 'carregando' }
-  | { status: 'erro' }
-  | { status: 'sucesso'; execucoes: Execucao[] };
-
 const DIAS_METRICAS = 30;
 const DIAS_GRAFICO = 7;
 const TOTAL_RECENTES = 5;
-const ESTADO_INICIAL: EstadoExecucoes = { status: 'carregando' };
 
 @Component({
   selector: 'app-dashboard',
@@ -36,15 +27,7 @@ const ESTADO_INICIAL: EstadoExecucoes = { status: 'carregando' };
   templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent {
-  private readonly execucaoService = inject(ExecucaoService);
-
-  private readonly estado = toSignal(
-    this.execucaoService.getExecucoes().pipe(
-      map((execucoes): EstadoExecucoes => ({ status: 'sucesso', execucoes })),
-      catchError(() => of<EstadoExecucoes>({ status: 'erro' })),
-    ),
-    { initialValue: ESTADO_INICIAL },
-  );
+  private readonly estado = injetarEstadoExecucoes();
 
   protected readonly carregando = computed(() => this.estado().status === 'carregando');
   protected readonly comErro = computed(() => this.estado().status === 'erro');
