@@ -1,0 +1,377 @@
+[
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d001",
+    "cliente": "BANESTES",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-07-15T07:52:00-03:00",
+    "dataFim": "2026-07-15T07:52:29-03:00",
+    "duracaoSegundos": 29,
+    "status": "EM_EXECUCAO",
+    "tipoTeste": "SFTP_UPLOAD",
+    "totalEtapas": 5,
+    "etapasComSucesso": 3,
+    "observacoes": "Execução em andamento - aguardando etapas finais",
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar SFTP", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 2, "nome": "Autenticar usuário", "status": "SUCESSO", "duracaoSegundos": 3 },
+      { "ordem": 3, "nome": "Enviar arquivo", "status": "SUCESSO", "duracaoSegundos": 22 },
+      { "ordem": 4, "nome": "Validar destino", "status": "PULADA", "duracaoSegundos": 0 },
+      { "ordem": 5, "nome": "Desconectar", "status": "PULADA", "duracaoSegundos": 0 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d002",
+    "cliente": "ECT",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-07-14T14:10:00-03:00",
+    "dataFim": "2026-07-14T14:11:00-03:00",
+    "duracaoSegundos": 60,
+    "status": "SUCESSO",
+    "tipoTeste": "FTP_DOWNLOAD",
+    "totalEtapas": 4,
+    "etapasComSucesso": 4,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar FTP", "status": "SUCESSO", "duracaoSegundos": 5 },
+      { "ordem": 2, "nome": "Autenticar usuário", "status": "SUCESSO", "duracaoSegundos": 3 },
+      { "ordem": 3, "nome": "Baixar arquivo", "status": "SUCESSO", "duracaoSegundos": 40 },
+      { "ordem": 4, "nome": "Validar conteúdo do arquivo", "status": "SUCESSO", "duracaoSegundos": 12 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d003",
+    "cliente": "TSE",
+    "ambiente": "HOMOLOGACAO",
+    "dataInicio": "2026-07-14T09:05:00-03:00",
+    "dataFim": "2026-07-14T09:05:13-03:00",
+    "duracaoSegundos": 13,
+    "status": "SUCESSO",
+    "tipoTeste": "RENOMEACAO_ARQUIVO",
+    "totalEtapas": 3,
+    "etapasComSucesso": 3,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar SFTP", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 2, "nome": "Renomear arquivo remoto", "status": "SUCESSO", "duracaoSegundos": 6 },
+      { "ordem": 3, "nome": "Validar renomeação", "status": "SUCESSO", "duracaoSegundos": 3 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d004",
+    "cliente": "BANESTES",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-07-13T11:40:00-03:00",
+    "dataFim": "2026-07-13T11:40:15-03:00",
+    "duracaoSegundos": 15,
+    "status": "FALHA",
+    "tipoTeste": "FTPS_UPLOAD",
+    "totalEtapas": 6,
+    "etapasComSucesso": 2,
+    "observacoes": "Falha crítica: certificado FTPS do cliente expirado, execução abortada",
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar FTPS", "status": "SUCESSO", "duracaoSegundos": 5 },
+      { "ordem": 2, "nome": "Validar certificado", "status": "FALHA", "duracaoSegundos": 8, "mensagem": "Certificado FTPS expirado" },
+      { "ordem": 3, "nome": "Autenticar usuário", "status": "PULADA", "duracaoSegundos": 0 },
+      { "ordem": 4, "nome": "Enviar arquivo", "status": "PULADA", "duracaoSegundos": 0 },
+      { "ordem": 5, "nome": "Validar checksum", "status": "PULADA", "duracaoSegundos": 0 },
+      { "ordem": 6, "nome": "Desconectar", "status": "SUCESSO", "duracaoSegundos": 2 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d005",
+    "cliente": "ECT",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-07-12T16:22:00-03:00",
+    "dataFim": "2026-07-12T16:22:31-03:00",
+    "duracaoSegundos": 31,
+    "status": "SUCESSO",
+    "tipoTeste": "VALIDACAO_RETORNO",
+    "totalEtapas": 4,
+    "etapasComSucesso": 4,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar SFTP", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 2, "nome": "Baixar arquivo de retorno", "status": "SUCESSO", "duracaoSegundos": 15 },
+      { "ordem": 3, "nome": "Validar conteúdo do retorno", "status": "SUCESSO", "duracaoSegundos": 9 },
+      { "ordem": 4, "nome": "Mover arquivo processado", "status": "SUCESSO", "duracaoSegundos": 3 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d006",
+    "cliente": "TSE",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-07-11T08:15:00-03:00",
+    "dataFim": "2026-07-11T08:15:40-03:00",
+    "duracaoSegundos": 40,
+    "status": "SUCESSO",
+    "tipoTeste": "SFTP_UPLOAD",
+    "totalEtapas": 5,
+    "etapasComSucesso": 5,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar SFTP", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 2, "nome": "Autenticar usuário", "status": "SUCESSO", "duracaoSegundos": 3 },
+      { "ordem": 3, "nome": "Enviar arquivo", "status": "SUCESSO", "duracaoSegundos": 25 },
+      { "ordem": 4, "nome": "Validar destino", "status": "SUCESSO", "duracaoSegundos": 6 },
+      { "ordem": 5, "nome": "Desconectar", "status": "SUCESSO", "duracaoSegundos": 2 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d007",
+    "cliente": "BANESTES",
+    "ambiente": "HOMOLOGACAO",
+    "dataInicio": "2026-07-10T13:47:00-03:00",
+    "dataFim": "2026-07-10T13:47:48-03:00",
+    "duracaoSegundos": 48,
+    "status": "PARCIAL",
+    "tipoTeste": "FTP_DOWNLOAD",
+    "totalEtapas": 4,
+    "etapasComSucesso": 3,
+    "observacoes": "Timeout no download, uma nova tentativa manual foi necessária. Execução concluída com ressalva.",
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar FTP", "status": "SUCESSO", "duracaoSegundos": 5 },
+      { "ordem": 2, "nome": "Autenticar usuário", "status": "SUCESSO", "duracaoSegundos": 3 },
+      { "ordem": 3, "nome": "Baixar arquivo", "status": "FALHA", "duracaoSegundos": 30, "mensagem": "Timeout na conexão FTP após 30s" },
+      { "ordem": 4, "nome": "Validar conteúdo do arquivo", "status": "SUCESSO", "duracaoSegundos": 10 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d008",
+    "cliente": "ECT",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-07-09T10:03:00-03:00",
+    "dataFim": "2026-07-09T10:03:12-03:00",
+    "duracaoSegundos": 12,
+    "status": "SUCESSO",
+    "tipoTeste": "RENOMEACAO_ARQUIVO",
+    "totalEtapas": 3,
+    "etapasComSucesso": 3,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar SFTP", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 2, "nome": "Renomear arquivo remoto", "status": "SUCESSO", "duracaoSegundos": 5 },
+      { "ordem": 3, "nome": "Validar renomeação", "status": "SUCESSO", "duracaoSegundos": 3 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d009",
+    "cliente": "TSE",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-07-07T19:58:00-03:00",
+    "dataFim": "2026-07-07T19:58:49-03:00",
+    "duracaoSegundos": 49,
+    "status": "SUCESSO",
+    "tipoTeste": "FTPS_UPLOAD",
+    "totalEtapas": 6,
+    "etapasComSucesso": 6,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar FTPS", "status": "SUCESSO", "duracaoSegundos": 5 },
+      { "ordem": 2, "nome": "Validar certificado", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 3, "nome": "Autenticar usuário", "status": "SUCESSO", "duracaoSegundos": 3 },
+      { "ordem": 4, "nome": "Enviar arquivo", "status": "SUCESSO", "duracaoSegundos": 28 },
+      { "ordem": 5, "nome": "Validar checksum", "status": "SUCESSO", "duracaoSegundos": 7 },
+      { "ordem": 6, "nome": "Desconectar", "status": "SUCESSO", "duracaoSegundos": 2 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d010",
+    "cliente": "BANESTES",
+    "ambiente": "HOMOLOGACAO",
+    "dataInicio": "2026-07-06T09:30:00-03:00",
+    "dataFim": "2026-07-06T09:30:30-03:00",
+    "duracaoSegundos": 30,
+    "status": "FALHA",
+    "tipoTeste": "VALIDACAO_RETORNO",
+    "totalEtapas": 4,
+    "etapasComSucesso": 0,
+    "observacoes": "Servidor remoto não respondeu dentro do tempo limite configurado",
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar SFTP", "status": "FALHA", "duracaoSegundos": 30, "mensagem": "Timeout na conexão SFTP após 30s" },
+      { "ordem": 2, "nome": "Baixar arquivo de retorno", "status": "PULADA", "duracaoSegundos": 0 },
+      { "ordem": 3, "nome": "Validar conteúdo do retorno", "status": "PULADA", "duracaoSegundos": 0 },
+      { "ordem": 4, "nome": "Mover arquivo processado", "status": "PULADA", "duracaoSegundos": 0 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d011",
+    "cliente": "ECT",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-07-05T15:12:00-03:00",
+    "dataFim": "2026-07-05T15:12:34-03:00",
+    "duracaoSegundos": 34,
+    "status": "SUCESSO",
+    "tipoTeste": "SFTP_UPLOAD",
+    "totalEtapas": 5,
+    "etapasComSucesso": 5,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar SFTP", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 2, "nome": "Autenticar usuário", "status": "SUCESSO", "duracaoSegundos": 3 },
+      { "ordem": 3, "nome": "Enviar arquivo", "status": "SUCESSO", "duracaoSegundos": 20 },
+      { "ordem": 4, "nome": "Validar destino", "status": "SUCESSO", "duracaoSegundos": 5 },
+      { "ordem": 5, "nome": "Desconectar", "status": "SUCESSO", "duracaoSegundos": 2 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d012",
+    "cliente": "TSE",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-07-03T07:20:00-03:00",
+    "dataFim": "2026-07-03T07:20:52-03:00",
+    "duracaoSegundos": 52,
+    "status": "SUCESSO",
+    "tipoTeste": "FTP_DOWNLOAD",
+    "totalEtapas": 4,
+    "etapasComSucesso": 4,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar FTP", "status": "SUCESSO", "duracaoSegundos": 5 },
+      { "ordem": 2, "nome": "Autenticar usuário", "status": "SUCESSO", "duracaoSegundos": 3 },
+      { "ordem": 3, "nome": "Baixar arquivo", "status": "SUCESSO", "duracaoSegundos": 35 },
+      { "ordem": 4, "nome": "Validar conteúdo do arquivo", "status": "SUCESSO", "duracaoSegundos": 9 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d013",
+    "cliente": "BANESTES",
+    "ambiente": "DESENVOLVIMENTO",
+    "dataInicio": "2026-07-02T12:05:00-03:00",
+    "dataFim": "2026-07-02T12:05:09-03:00",
+    "duracaoSegundos": 9,
+    "status": "SUCESSO",
+    "tipoTeste": "RENOMEACAO_ARQUIVO",
+    "totalEtapas": 3,
+    "etapasComSucesso": 3,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar SFTP", "status": "SUCESSO", "duracaoSegundos": 3 },
+      { "ordem": 2, "nome": "Renomear arquivo remoto", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 3, "nome": "Validar renomeação", "status": "SUCESSO", "duracaoSegundos": 2 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d014",
+    "cliente": "ECT",
+    "ambiente": "HOMOLOGACAO",
+    "dataInicio": "2026-06-30T08:48:00-03:00",
+    "dataFim": "2026-06-30T08:48:44-03:00",
+    "duracaoSegundos": 44,
+    "status": "PARCIAL",
+    "tipoTeste": "FTPS_UPLOAD",
+    "totalEtapas": 6,
+    "etapasComSucesso": 5,
+    "observacoes": "Arquivo de mesmo nome já estava no destino; validado como já processado anteriormente",
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar FTPS", "status": "SUCESSO", "duracaoSegundos": 5 },
+      { "ordem": 2, "nome": "Validar certificado", "status": "SUCESSO", "duracaoSegundos": 3 },
+      { "ordem": 3, "nome": "Autenticar usuário", "status": "SUCESSO", "duracaoSegundos": 3 },
+      { "ordem": 4, "nome": "Enviar arquivo", "status": "FALHA", "duracaoSegundos": 25, "mensagem": "Arquivo já existente no destino" },
+      { "ordem": 5, "nome": "Validar checksum", "status": "SUCESSO", "duracaoSegundos": 6 },
+      { "ordem": 6, "nome": "Desconectar", "status": "SUCESSO", "duracaoSegundos": 2 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d015",
+    "cliente": "TSE",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-06-28T17:33:00-03:00",
+    "dataFim": "2026-06-28T17:33:29-03:00",
+    "duracaoSegundos": 29,
+    "status": "SUCESSO",
+    "tipoTeste": "VALIDACAO_RETORNO",
+    "totalEtapas": 4,
+    "etapasComSucesso": 4,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar SFTP", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 2, "nome": "Baixar arquivo de retorno", "status": "SUCESSO", "duracaoSegundos": 14 },
+      { "ordem": 3, "nome": "Validar conteúdo do retorno", "status": "SUCESSO", "duracaoSegundos": 8 },
+      { "ordem": 4, "nome": "Mover arquivo processado", "status": "SUCESSO", "duracaoSegundos": 3 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d016",
+    "cliente": "BANESTES",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-06-26T09:57:00-03:00",
+    "dataFim": "2026-06-26T09:57:11-03:00",
+    "duracaoSegundos": 11,
+    "status": "FALHA",
+    "tipoTeste": "SFTP_UPLOAD",
+    "totalEtapas": 5,
+    "etapasComSucesso": 2,
+    "observacoes": "Credenciais de acesso ao servidor remoto precisam ser atualizadas",
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar SFTP", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 2, "nome": "Autenticar usuário", "status": "FALHA", "duracaoSegundos": 6, "mensagem": "Falha de autenticação - credenciais inválidas" },
+      { "ordem": 3, "nome": "Enviar arquivo", "status": "PULADA", "duracaoSegundos": 0 },
+      { "ordem": 4, "nome": "Validar destino", "status": "PULADA", "duracaoSegundos": 0 },
+      { "ordem": 5, "nome": "Desconectar", "status": "SUCESSO", "duracaoSegundos": 1 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d017",
+    "cliente": "ECT",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-06-24T14:40:00-03:00",
+    "dataFim": "2026-06-24T14:40:56-03:00",
+    "duracaoSegundos": 56,
+    "status": "SUCESSO",
+    "tipoTeste": "FTP_DOWNLOAD",
+    "totalEtapas": 4,
+    "etapasComSucesso": 4,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar FTP", "status": "SUCESSO", "duracaoSegundos": 5 },
+      { "ordem": 2, "nome": "Autenticar usuário", "status": "SUCESSO", "duracaoSegundos": 3 },
+      { "ordem": 3, "nome": "Baixar arquivo", "status": "SUCESSO", "duracaoSegundos": 38 },
+      { "ordem": 4, "nome": "Validar conteúdo do arquivo", "status": "SUCESSO", "duracaoSegundos": 10 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d018",
+    "cliente": "TSE",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-06-21T11:15:00-03:00",
+    "dataFim": "2026-06-21T11:15:12-03:00",
+    "duracaoSegundos": 12,
+    "status": "SUCESSO",
+    "tipoTeste": "RENOMEACAO_ARQUIVO",
+    "totalEtapas": 3,
+    "etapasComSucesso": 3,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar SFTP", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 2, "nome": "Renomear arquivo remoto", "status": "SUCESSO", "duracaoSegundos": 5 },
+      { "ordem": 3, "nome": "Validar renomeação", "status": "SUCESSO", "duracaoSegundos": 3 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d019",
+    "cliente": "BANESTES",
+    "ambiente": "HOMOLOGACAO",
+    "dataInicio": "2026-06-18T10:22:00-03:00",
+    "dataFim": "2026-06-18T10:22:44-03:00",
+    "duracaoSegundos": 44,
+    "status": "SUCESSO",
+    "tipoTeste": "FTPS_UPLOAD",
+    "totalEtapas": 6,
+    "etapasComSucesso": 6,
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar FTPS", "status": "SUCESSO", "duracaoSegundos": 5 },
+      { "ordem": 2, "nome": "Validar certificado", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 3, "nome": "Autenticar usuário", "status": "SUCESSO", "duracaoSegundos": 3 },
+      { "ordem": 4, "nome": "Enviar arquivo", "status": "SUCESSO", "duracaoSegundos": 24 },
+      { "ordem": 5, "nome": "Validar checksum", "status": "SUCESSO", "duracaoSegundos": 6 },
+      { "ordem": 6, "nome": "Desconectar", "status": "SUCESSO", "duracaoSegundos": 2 }
+    ]
+  },
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d020",
+    "cliente": "ECT",
+    "ambiente": "PRODUCAO",
+    "dataInicio": "2026-06-16T08:05:00-03:00",
+    "dataFim": "2026-06-16T08:05:34-03:00",
+    "duracaoSegundos": 34,
+    "status": "FALHA",
+    "tipoTeste": "VALIDACAO_RETORNO",
+    "totalEtapas": 4,
+    "etapasComSucesso": 1,
+    "observacoes": "Diretório de retorno vazio no momento da consulta - possível atraso no processamento do lado do servidor",
+    "etapas": [
+      { "ordem": 1, "nome": "Conectar SFTP", "status": "SUCESSO", "duracaoSegundos": 4 },
+      { "ordem": 2, "nome": "Baixar arquivo de retorno", "status": "FALHA", "duracaoSegundos": 30, "mensagem": "Arquivo de retorno não encontrado no diretório esperado" },
+      { "ordem": 3, "nome": "Validar conteúdo do retorno", "status": "PULADA", "duracaoSegundos": 0 },
+      { "ordem": 4, "nome": "Mover arquivo processado", "status": "PULADA", "duracaoSegundos": 0 }
+    ]
+  }
+]
