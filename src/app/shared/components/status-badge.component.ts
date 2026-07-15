@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
-import { StatusExecucao } from '../../core/models/execucao.model';
+import { ROTULOS_STATUS_EXECUCAO, StatusExecucao } from '../../core/models/execucao.model';
 
 interface StatusConfig {
   label: string;
@@ -8,11 +8,11 @@ interface StatusConfig {
 }
 
 const STATUS_CONFIG: Record<StatusExecucao, StatusConfig> = {
-  SUCESSO: { label: 'Sucesso', classes: 'bg-status-sucesso/10 text-status-sucesso' },
-  FALHA: { label: 'Falha', classes: 'bg-status-falha/10 text-status-falha' },
-  PARCIAL: { label: 'Parcial', classes: 'bg-status-parcial/10 text-status-parcial' },
+  SUCESSO: { label: ROTULOS_STATUS_EXECUCAO.SUCESSO, classes: 'bg-status-sucesso/10 text-status-sucesso' },
+  FALHA: { label: ROTULOS_STATUS_EXECUCAO.FALHA, classes: 'bg-status-falha/10 text-status-falha' },
+  PARCIAL: { label: ROTULOS_STATUS_EXECUCAO.PARCIAL, classes: 'bg-status-parcial/10 text-status-parcial' },
   EM_EXECUCAO: {
-    label: 'Em execução',
+    label: ROTULOS_STATUS_EXECUCAO.EM_EXECUCAO,
     classes: 'bg-status-em-execucao/10 text-status-em-execucao',
   },
 };

@@ -6,6 +6,13 @@ export type StatusExecucao = 'SUCESSO' | 'FALHA' | 'PARCIAL' | 'EM_EXECUCAO';
 
 export type StatusEtapa = 'SUCESSO' | 'FALHA' | 'PULADA';
 
+export const ROTULOS_STATUS_EXECUCAO: Record<StatusExecucao, string> = {
+  SUCESSO: 'Sucesso',
+  FALHA: 'Falha',
+  PARCIAL: 'Parcial',
+  EM_EXECUCAO: 'Em execução',
+};
+
 export interface EtapaExecucao {
   ordem: number;
   nome: string;

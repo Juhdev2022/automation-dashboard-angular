@@ -5,7 +5,12 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
 
-import { Ambiente, Cliente, StatusExecucao } from '../../core/models/execucao.model';
+import {
+  Ambiente,
+  Cliente,
+  ROTULOS_STATUS_EXECUCAO,
+  StatusExecucao,
+} from '../../core/models/execucao.model';
 import { injetarEstadoExecucoes } from '../../core/services/execucoes-estado';
 import { ClienteBadgeComponent } from '../../shared/components/cliente-badge.component';
 import { StatusBadgeComponent } from '../../shared/components/status-badge.component';
@@ -39,6 +44,8 @@ export class ExecucoesListComponent {
     const estadoAtual = this.estado();
     return estadoAtual.status === 'sucesso' ? estadoAtual.execucoes : [];
   });
+
+  protected readonly rotulosStatus = ROTULOS_STATUS_EXECUCAO;
 
   protected readonly clientesDisponiveis: Cliente[] = ['BANESTES', 'ECT', 'TSE'];
   protected readonly statusesDisponiveis: StatusExecucao[] = [
