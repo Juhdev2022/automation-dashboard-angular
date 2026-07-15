@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Documento de planejamento interno - cita clientes reais (Banestes/ECT/TSE) e infra da eSales
+CONTEXTO_PROJETO.md
