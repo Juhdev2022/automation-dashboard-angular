@@ -11,6 +11,12 @@ module.exports = {
           parcial: '#F59E0B',
           'em-execucao': '#3B82F6',
         },
+        cliente: {
+          banestes: '#1B4F8A',
+          ect: '#F59E0B',
+          tse: '#7C3AED',
+          desconhecido: '#6B7280',
+        },
       },
     },
   },
