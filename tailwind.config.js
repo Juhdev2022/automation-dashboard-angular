@@ -13,7 +13,7 @@ module.exports = {
         },
         cliente: {
           banestes: '#1B4F8A',
-          ect: '#F59E0B',
+          ect: '#0F766E',
           tse: '#7C3AED',
           desconhecido: '#6B7280',
         },
