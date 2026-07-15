@@ -1,1 +1,23 @@
-<router-outlet />
+<header class="border-b border-gray-200 bg-white">
+  <nav class="mx-auto flex max-w-5xl items-center gap-6 px-6 py-4">
+    <span class="text-lg font-bold text-corporate">Automation Dashboard</span>
+    <a
+      routerLink="/"
+      routerLinkActive="text-corporate font-semibold"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="text-gray-600 hover:text-corporate"
+    >
+      Dashboard
+    </a>
+    <a
+      routerLink="/execucoes"
+      routerLinkActive="text-corporate font-semibold"
+      class="text-gray-600 hover:text-corporate"
+    >
+      Execuções
+    </a>
+  </nav>
+</header>
+<main class="mx-auto max-w-5xl">
+  <router-outlet />
+</main>
