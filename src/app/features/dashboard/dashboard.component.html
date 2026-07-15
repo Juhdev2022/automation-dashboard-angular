@@ -1,0 +1,87 @@
+@if (carregando()) {
+  <div class="p-8 text-gray-600">Carregando dados do dashboard...</div>
+} @else if (comErro()) {
+  <div class="p-8 text-status-falha">
+    Não foi possível carregar os dados das execuções. Tente novamente mais tarde.
+  </div>
+} @else {
+  <div class="space-y-8 p-8">
+    <h1 class="text-2xl font-bold text-corporate">Dashboard</h1>
+
+    <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="rounded-lg border border-gray-200 bg-white p-4">
+        <p class="text-sm text-gray-500">Total de execuções (30 dias)</p>
+        <p class="mt-1 text-2xl font-semibold text-corporate">{{ totalExecucoes() }}</p>
+      </div>
+      <div class="rounded-lg border border-gray-200 bg-white p-4">
+        <p class="text-sm text-gray-500">Taxa de sucesso</p>
+        <p class="mt-1 text-2xl font-semibold text-corporate">{{ taxaSucesso() }}%</p>
+      </div>
+      <div class="rounded-lg border border-gray-200 bg-white p-4">
+        <p class="text-sm text-gray-500">Tempo médio de execução</p>
+        <p class="mt-1 text-2xl font-semibold text-corporate">{{ tempoMedioSegundos() | duracao }}</p>
+      </div>
+      <div class="rounded-lg border border-gray-200 bg-white p-4">
+        <p class="text-sm text-gray-500">Cliente com mais falhas</p>
+        @if (clienteComMaisFalhas(); as cliente) {
+          <div class="mt-1">
+            <app-cliente-badge [cliente]="cliente" />
+          </div>
+        } @else {
+          <p class="mt-1 text-2xl font-semibold text-corporate">—</p>
+        }
+      </div>
+    </section>
+
+    <section class="rounded-lg border border-gray-200 bg-white p-4">
+      <h2 class="mb-4 text-lg font-semibold text-corporate">Execuções por dia (últimos 7 dias)</h2>
+      <svg viewBox="0 0 350 150" class="h-40 w-full" preserveAspectRatio="none">
+        @for (dia of execucoesPorDia(); track dia.data; let i = $index) {
+          <rect
+            [attr.x]="i * 50 + 10"
+            [attr.y]="130 - (dia.total / maiorTotalPorDia()) * 110"
+            width="30"
+            [attr.height]="(dia.total / maiorTotalPorDia()) * 110"
+            class="fill-corporate"
+          />
+          <text
+            [attr.x]="i * 50 + 25"
+            y="145"
+            text-anchor="middle"
+            class="fill-gray-500 text-[10px]"
+          >
+            {{ dia.rotulo }}
+          </text>
+          <text
+            [attr.x]="i * 50 + 25"
+            [attr.y]="122 - (dia.total / maiorTotalPorDia()) * 110"
+            text-anchor="middle"
+            class="fill-corporate text-[10px] font-medium"
+          >
+            {{ dia.total }}
+          </text>
+        }
+      </svg>
+    </section>
+
+    <section class="rounded-lg border border-gray-200 bg-white p-4">
+      <h2 class="mb-4 text-lg font-semibold text-corporate">Execuções mais recentes</h2>
+      @if (execucoesRecentes().length === 0) {
+        <p class="text-gray-500">Nenhuma execução encontrada.</p>
+      } @else {
+        <ul class="divide-y divide-gray-100">
+          @for (execucao of execucoesRecentes(); track execucao.id) {
+            <li class="flex items-center justify-between gap-4 py-3">
+              <a [routerLink]="['/execucoes', execucao.id]" class="flex flex-1 items-center gap-3">
+                <app-cliente-badge [cliente]="execucao.cliente" />
+                <span class="text-sm text-gray-700">{{ execucao.tipoTeste }}</span>
+                <span class="text-xs text-gray-400">{{ execucao.dataFim | dataRelativa }}</span>
+              </a>
+              <app-status-badge [status]="execucao.status" />
+            </li>
+          }
+        </ul>
+      }
+    </section>
+  </div>
+}
