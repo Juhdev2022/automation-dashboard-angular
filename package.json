@@ -1,6 +1,12 @@
 {
   "name": "automation-dashboard-angular",
   "version": "0.0.0",
+  "description": "Dashboard Angular para visualização de execuções de testes automatizados de plataforma de transferência de arquivos, com filtros, ordenação, paginação e timeline de etapas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Juhdev2022/automation-dashboard-angular.git"
+  },
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
